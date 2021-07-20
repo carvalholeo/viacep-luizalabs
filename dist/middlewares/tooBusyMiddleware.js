@@ -1,0 +1,1 @@
+"use strict";var toobusy=require("toobusy-js");toobusy.maxLag(100);function tooBusyMiddleware(req,res,next){if(toobusy()){return res.status(503).json({message:"Server is currently busy. Try in a few minutes."})}next()}module.exports=tooBusyMiddleware;

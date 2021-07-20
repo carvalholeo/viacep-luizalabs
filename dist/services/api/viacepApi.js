@@ -1,0 +1,1 @@
+"use strict";var axios=require("axios");var URL="http://viacep.com.br/ws/";var api=axios.create({baseURL:URL,timeout:5000});module.exports=api;

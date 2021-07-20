@@ -1,0 +1,1 @@
+"use strict";var _require=require("express"),Router=_require.Router;var cepController=require("../controllers/cepController");var cepValidator=require("../validators/cepValidator");var validatorMiddleware=require("../middlewares/validatorMiddleware");var router=Router();router.get("/:cepNumber",cepValidator,validatorMiddleware,cepController.getCep);module.exports=router;

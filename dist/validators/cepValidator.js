@@ -1,0 +1,1 @@
+"use strict";var _require=require("express-validator"),param=_require.param;var cepValidator=[param("cepNumber").trim().escape().exists({checkFalsy:true,checkNull:true}).withMessage("CEP \xE9 obrigat\xF3rio").isLength({min:9,max:9}).withMessage("CEP deve ter 9 d\xEDgitos (incluindo o h\xEDfen)").isPostalCode("BR").withMessage("CEP inv\xE1lido")];module.exports=cepValidator;

@@ -1,0 +1,1 @@
+"use strict";var viacepApi=require("./api/viacepApi");function getCep(cep){return new Promise(function(resolve,reject){viacepApi.get("".concat(cep,"/json")).then(function(response){resolve(response)})["catch"](function(error){reject(error)})})}module.exports=getCep;
