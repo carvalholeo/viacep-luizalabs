@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "npx nodemon ./bin/www",
+    "build": "npx babel ./src --out-dir ./dist",
+    "dev": "npx nodemon ./src/bin/www",
     "lint": "npx eslint .",
+    "prestart": "npm run build",
+    "start": "node ./dist/bin/www",
     "test": "jest"
   },
   "dependencies": {
