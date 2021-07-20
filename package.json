@@ -17,6 +17,7 @@
     "debug": "~4.3.1",
     "dotenv": "~8.2.0",
     "express": "~4.17.1",
+    "express-bouncer": "^0.2.0",
     "express-validator": "^6.10.1",
     "helmet": "^4.4.1",
     "hpp": "^0.2.3",
