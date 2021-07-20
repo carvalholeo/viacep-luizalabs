@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator')
  * Function to handle with errors from Express Validator.
  * @param {Request} req Object with the Request
  * @param {Response} res Object to handle with response
- * @param {Function} next Callback to be called if no errors occured.
+ * @param {Function} next Callback to be called if no errors occurred.
  * @return {Response} Returns with response object if a error were found.
  */
 function validatorMiddleware (req, res, next) {
