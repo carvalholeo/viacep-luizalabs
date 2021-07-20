@@ -26,7 +26,8 @@ Testes foram criados com o Jest, tecnologia open source do Facebook. Após a ins
 Este projeto foi criado utilizado uma versão personalizada do [Express Generator](https://www.npmjs.com/package/express-generator), o [Express Generator DH](https://www.npmjs.com/package/express-generator-dh).
 Os principais pacotes de produção utilizados são:
 
-- Express 4.17.1: manipulação das requisições HTTP
+- Axios 0.21.1: fazer requisições HTTP para outros serviços
+- Express 4.17.1: manipulação das requisições HTTP de clientes
 - Cors 2.8.5: habilitador de segurança para evitar uso indevido da API
 - Cross Env 7.0.3: coloca variáveis de ambiente antes da execução de qualquer código
 - Dotenv 8.2.0: trabalhar com variáveis de ambiente, sem senhas e tokens _hard coded_
