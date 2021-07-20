@@ -1,3 +1,4 @@
+// @ts-check
 'use strict'
 require('dotenv').config()
 const createError = require('http-errors')
@@ -8,6 +9,7 @@ const logger = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 
+// @ts-ignore
 const apiRouter = require('./routes/values')
 
 const app = express()
