@@ -17,6 +17,10 @@ Isso colocará o servidor no ar. Para visualizar as informações de um CEP, ent
 - Node 10.24.0 ou superior
 - NPM 6.14.11
 
+## Como visualizar a documentação
+
+Com as dependências instaladas, inicie o projeto com o comando `npm start`. No navegador, entre na página [http://localhost:3000/api-docs](http://localhost:3000/api-docs). Você será capaz de visualizar a documentação, com a utilização de Swagger.
+
 ## Como executar testes
 
 Testes foram criados com o Jest, tecnologia open source do Facebook. Após a instalação das dependências, execute `npm test`, para que a biblioteca faça os testes e gere os relatórios.
