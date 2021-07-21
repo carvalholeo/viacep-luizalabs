@@ -38,7 +38,8 @@ const cepController = {
       rua: logradouro,
       bairro,
       cidade: localidade,
-      estado: uf
+      estado: uf,
+      'cep-geral': false
     }
 
     if (logradouro === '') {

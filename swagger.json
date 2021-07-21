@@ -1,0 +1,151 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ViaCEP LuizaLabs",
+    "description": "API created for consumes CEPs (brazilian postal codes). It's part of technical challenge requested by LuizaLabs' hiring team.",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "contact": {
+      "name": "Léo Carvalho",
+      "url": "https://leocarvalho.dev",
+      "email": "carvalho.csleo@gmail.com"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "CEP",
+      "description": "Set of routes to access and manage CEPs"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/cep/{cepNumber}": {
+      "get": {
+        "tags": [
+          "CEP"
+        ],
+        "summary": "Get details of a CEP",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CEP"
+            }
+          },
+          "404": {
+            "description": "CEP number wasn't found.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "406": {
+            "description": "CEP number wasn't provided or was in an incorrect format.",
+            "schema": {
+              "$ref": "#/definitions/ValidationError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cepNumber",
+            "in": "path",
+            "description": "CEP number",
+            "required": true,
+            "type": "string",
+            "format": "cep"
+          }
+        ],
+        "operationId": "getCEP"
+      }
+    }
+  },
+  "definitions": {
+    "CEP": {
+      "properties": {
+        "cep": {
+          "type": "string",
+          "description": "CEP number"
+        },
+        "rua": {
+          "type": "string",
+          "description": "Address street name"
+        },
+        "bairro": {
+          "type": "string",
+          "description": "Address neighborhood"
+        },
+        "cidade": {
+          "type": "string",
+          "description": "Address city"
+        },
+        "estado": {
+          "type": "string",
+          "description": "Address state"
+        },
+        "cep-geral": {
+          "type": "boolean",
+          "default": false,
+          "description": "Indicates if CEP is a general one or not"
+        }
+      }
+    },
+    "Error": {
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Detailed error message"
+        }
+      }
+    },
+    "ValidationError": {
+      "description": "Errors provided by Express Validator, when some precondition wasn't filled.",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Generic message error"
+        },
+        "errors": {
+          "type": "object",
+          "properties": {
+            "param-name": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "description": "Specific error found during validation"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Value provided to API and subject to be rejected"
+                },
+                "param": {
+                  "type": "string",
+                  "description": "Name of the parameter with error"
+                },
+                "location": {
+                  "type": "string",
+                  "description": "Place where the parameter was expected and it's with error."
+                }
+              },
+              "description": "Parameter in body, query string, route params, headers or cookies with some error."
+            }
+          },
+          "description": "Object with errors found by Express Validator"
+        }
+      }
+    }
+  }
+}

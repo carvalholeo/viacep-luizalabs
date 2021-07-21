@@ -9,9 +9,11 @@ const logger = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const hpp = require('hpp')
+const { serve, setup } = require('swagger-ui-express')
 
 // @ts-ignore
 const cepRoutes = require('./routes/cepRoutes')
+const swaggerJson = require('../swagger.json')
 // @ts-ignore
 const tooBusyMiddleware = require('./middlewares/tooBusyMiddleware')
 const bouncerLimiter = require('./middlewares/bouncerLimiterMiddleware')
@@ -37,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bouncerLimiter.block)
 
 app.use('/cep', cepRoutes)
+app.use('/api-docs', serve, setup(swaggerJson))
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -17,6 +17,10 @@ Isso colocará o servidor no ar. Para visualizar as informações de um CEP, ent
 - Node 10.24.0 ou superior
 - NPM 6.14.11
 
+## Como visualizar a documentação
+
+Com as dependências instaladas, inicie o projeto com o comando `npm start`. No navegador, entre na página [http://localhost:3000/api-docs](http://localhost:3000/api-docs). Você será capaz de visualizar a documentação, com a utilização de Swagger.
+
 ## Como executar testes
 
 Testes foram criados com o Jest, tecnologia open source do Facebook. Após a instalação das dependências, execute `npm test`, para que a biblioteca faça os testes e gere os relatórios.
@@ -35,6 +39,7 @@ Os principais pacotes de produção utilizados são:
 - Express Validator 6.10.1: validação de informações recebidas na requisição
 - Helmet 4.4.1: limpeza e validações de segurança do ambiente Node
 - HPP 0.2.3: limpeza de _query strings_, para evitar ataques de _Parameter Pollution_
+- Swagger UI Express 4.1.6: documentação da API, através de interface Web
 - Toobusy JS 0.5.1: middleware de resposta para o usuário, para quando o Node estiver sobrecarregado
 
 Já no ambiente de desenvolvimento, há os seguintes pacotes instalados:
