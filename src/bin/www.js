@@ -5,7 +5,7 @@
  * Module dependencies.
  */
 const app = require('../app')
-const debug = require('debug')('projetoluizalabs:server')
+const debug = require('debug')('viacep-luizalabs:server')
 const http = require('http')
 
 /**
