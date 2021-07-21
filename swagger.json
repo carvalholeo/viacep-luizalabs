@@ -68,12 +68,7 @@
             "format": "cep"
           }
         ],
-        "operationId": "getCEP",
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
+        "operationId": "getCEP"
       }
     }
   },
