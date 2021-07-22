@@ -1,0 +1,35 @@
+name: Code Coverage
+
+on: ['push', 'pull_request']
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - ubuntu-18.04
+        node_version:
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+          - 15
+        architecture:
+          - x64
+    name: Node V${{ matrix.node_version }} on ${{ matrix.os }}/${{ matrix.architecture }}
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node_version }}
+        architecture: ${{ matrix.architecture }}
+    - run: npm install-test
+
+    - uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
