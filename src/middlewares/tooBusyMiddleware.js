@@ -1,7 +1,7 @@
 // @ts-check
 const toobusy = require('toobusy-js')
 
-toobusy.maxLag(100)
+toobusy.maxLag(500)
 
 /**
  * Function to handle with event loop blocked or with some lag.
