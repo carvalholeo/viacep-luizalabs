@@ -1,6 +1,5 @@
 
 const request = require('supertest')
-const sinon = require('sinon')
 const tooBusy = require('toobusy-js')
 const app = require('../../src/app')
 
