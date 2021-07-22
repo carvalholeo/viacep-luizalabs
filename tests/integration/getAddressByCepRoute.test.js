@@ -147,19 +147,4 @@ describe('GET /cep/:cepNumber', () => {
         done()
       })
   })
-
-  it('should return a 404 error when it\'s accessed an invalid route', done => {
-    request(app)
-      .get('/cep/')
-      .expect(404)
-      .end((err, response) => {
-        if (err) {
-          return done(err)
-        }
-
-        expect(response.body).toHaveProperty('message')
-        expect(response.body.message).toBe('Not Found')
-        done()
-      })
-  })
 })
