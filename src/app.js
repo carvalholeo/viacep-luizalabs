@@ -16,7 +16,6 @@ const cepRoutes = require('./routes/cepRoutes')
 const swaggerJson = require('../swagger.json')
 // @ts-ignore
 const tooBusyMiddleware = require('./middlewares/tooBusyMiddleware')
-const bouncerLimiter = require('./middlewares/bouncerLimiterMiddleware')
 
 const app = express()
 
@@ -36,7 +35,10 @@ app.use(tooBusyMiddleware)
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(bouncerLimiter.block)
+if (process.env.NODE_ENV !== 'test') {
+  const bouncerLimiter = require('./middlewares/bouncerLimiterMiddleware')
+  app.use(bouncerLimiter.block)
+}
 
 app.use('/cep', cepRoutes)
 app.use('/api-docs', serve, setup(swaggerJson))
