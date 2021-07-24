@@ -1,0 +1,26 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Windows
+
+on: ['push', 'pull_request']
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node_version:
+          - 10
+          - 12
+          - 14
+    name:  Node V${{ matrix.node_version }} on Windows Server 2019
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+          architecture: ${{ matrix.architecture }}
+      - run: npm rebuild
+      - run: npm install-test
+      - run: npm run lint
