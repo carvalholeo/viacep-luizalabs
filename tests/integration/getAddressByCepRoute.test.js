@@ -1,12 +1,7 @@
 const request = require('supertest')
-const tooBusy = require('toobusy-js')
 const app = require('../../src/app')
 
 describe('GET /cep/:cepNumber', () => {
-  afterAll(() => {
-    tooBusy.shutdown()
-  })
-
   it('should return an address when it\'s passed a valid CEP', done => {
     request(app)
       .get('/cep/05859-000')
