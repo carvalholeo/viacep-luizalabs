@@ -40,7 +40,6 @@ Os principais pacotes de produção utilizados são:
 - Helmet 4.4.1: limpeza e validações de segurança do ambiente Node
 - HPP 0.2.3: limpeza de _query strings_, para evitar ataques de _Parameter Pollution_
 - Swagger UI Express 4.1.6: documentação da API, através de interface Web
-- Toobusy JS 0.5.1: middleware de resposta para o usuário, para quando o Node estiver sobrecarregado
 
 Já no ambiente de desenvolvimento, há os seguintes pacotes instalados:
 

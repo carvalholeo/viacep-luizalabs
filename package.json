@@ -28,8 +28,7 @@
     "http-errors": "~1.8.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "~1.10.0",
-    "swagger-ui-express": "^4.1.6",
-    "toobusy-js": "^0.5.1"
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
