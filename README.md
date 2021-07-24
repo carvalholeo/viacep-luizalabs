@@ -1,5 +1,9 @@
 # BuscaCEP Luizalabs
 
+[![Code Coverage](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/coveralls.yml/badge.svg)](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/coveralls.yml)
+[![Windows](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/test-windows.yml/badge.svg)](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/test-windows.yml)
+[![Coverage Status](https://coveralls.io/repos/github/carvalholeo/viacep-luizalabs/badge.svg?branch=main)](https://coveralls.io/github/carvalholeo/viacep-luizalabs?branch=main)
+
 Este projeto foi criado no contexto de um processo seletivo para trabalhar como Pessoa Desenvolvedora Back-end em Node.
 
 É um desafio técnico, que consiste em receber um CEP, verificar se há uma informação de endereço válida e, caso não haja, tentar alternativas até que se possa ter um endereço completo válido. Caso não seja possível, a API responde ao cliente com um erro e código HTTP de requisição inválida.
