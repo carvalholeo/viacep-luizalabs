@@ -5,8 +5,6 @@ const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
-const morgan = require('morgan')
-const json = require('morgan-json')
 const cors = require('cors')
 const helmet = require('helmet')
 const hpp = require('hpp')
@@ -15,13 +13,14 @@ const { serve, setup } = require('swagger-ui-express')
 // @ts-ignore
 const cepRoutes = require('./routes/cepRoutes')
 const swaggerJson = require('../swagger.json')
-
+const httpLogger = require('./services/log/httpLogger')
 const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', '')
 
+app.use(httpLogger)
 app.use(helmet())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
