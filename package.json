@@ -8,7 +8,7 @@
     "lint": "npx eslint .",
     "prestart": "npm run build",
     "start": "node ./dist/bin/www",
-    "test": "jest --passWithNoTests --detectOpenHandles",
+    "test": "jest --passWithNoTests --detectOpenHandles --testTimeout=10000",
     "preversion": "npm test && npm run lint",
     "version": "npm run build",
     "postversion": "git add -A && git push --tags"
