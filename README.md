@@ -1,5 +1,9 @@
 # BuscaCEP Luizalabs
 
+[![Code Coverage](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/coveralls.yml/badge.svg)](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/coveralls.yml)
+[![Windows](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/test-windows.yml/badge.svg)](https://github.com/carvalholeo/viacep-luizalabs/actions/workflows/test-windows.yml)
+[![Coverage Status](https://coveralls.io/repos/github/carvalholeo/viacep-luizalabs/badge.svg?branch=main)](https://coveralls.io/github/carvalholeo/viacep-luizalabs?branch=main)
+
 Este projeto foi criado no contexto de um processo seletivo para trabalhar como Pessoa Desenvolvedora Back-end em Node.
 
 É um desafio técnico, que consiste em receber um CEP, verificar se há uma informação de endereço válida e, caso não haja, tentar alternativas até que se possa ter um endereço completo válido. Caso não seja possível, a API responde ao cliente com um erro e código HTTP de requisição inválida.
@@ -40,7 +44,6 @@ Os principais pacotes de produção utilizados são:
 - Helmet 4.4.1: limpeza e validações de segurança do ambiente Node
 - HPP 0.2.3: limpeza de _query strings_, para evitar ataques de _Parameter Pollution_
 - Swagger UI Express 4.1.6: documentação da API, através de interface Web
-- Toobusy JS 0.5.1: middleware de resposta para o usuário, para quando o Node estiver sobrecarregado
 
 Já no ambiente de desenvolvimento, há os seguintes pacotes instalados:
 

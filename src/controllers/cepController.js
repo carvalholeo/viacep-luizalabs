@@ -11,6 +11,10 @@ const cepController = {
       query = await getCep(cepClean)
       const cepArray = cepClean.split('')
 
+      if (query.data.logradouro === '') {
+        break
+      }
+
       if (query.data.erro) {
         cepArray[index] = '0'
         cepClean = cepArray.join('')

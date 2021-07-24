@@ -1,6 +1,6 @@
 {
   "name": "viacep-luizalabs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "scripts": {
     "build": "npx babel ./src --out-dir ./dist",
@@ -8,7 +8,7 @@
     "lint": "npx eslint .",
     "prestart": "npm run build",
     "start": "node ./dist/bin/www",
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --detectOpenHandles --testTimeout=10000",
     "preversion": "npm test && npm run lint",
     "version": "npm run build",
     "postversion": "git add -A && git push --tags"
@@ -22,14 +22,13 @@
     "dotenv": "~8.2.0",
     "express": "~4.17.1",
     "express-bouncer": "^0.2.0",
-    "express-validator": "^6.10.1",
+    "express-validator": "^6.12.0",
     "helmet": "^4.4.1",
     "hpp": "^0.2.3",
     "http-errors": "~1.8.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "~1.10.0",
-    "swagger-ui-express": "^4.1.6",
-    "toobusy-js": "^0.5.1"
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
@@ -38,6 +37,7 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "@babel/register": "^7.14.5",
+    "@types/jest": "^26.0.24",
     "eslint": "^7.31.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
