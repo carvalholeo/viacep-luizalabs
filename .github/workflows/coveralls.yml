@@ -29,6 +29,7 @@ jobs:
         node-version: ${{ matrix.node_version }}
         architecture: ${{ matrix.architecture }}
     - run: npm install-test
+    - run: npm run lint
 
     - uses: coverallsapp/github-action@master
       with:

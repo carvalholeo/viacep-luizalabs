@@ -43,7 +43,10 @@ Os principais pacotes de produção utilizados são:
 - Express Validator 6.10.1: validação de informações recebidas na requisição
 - Helmet 4.4.1: limpeza e validações de segurança do ambiente Node
 - HPP 0.2.3: limpeza de _query strings_, para evitar ataques de _Parameter Pollution_
+- Morgan 1.10.10: registrador de log para requisições HTTP
+- Morgan JSON 1.1.0: transformação das mensagens padrão de log em JSON
 - Swagger UI Express 4.1.6: documentação da API, através de interface Web
+- Winston 3.3.3: pacote para configurar os logs do sistema
 
 Já no ambiente de desenvolvimento, há os seguintes pacotes instalados:
 
