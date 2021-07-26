@@ -14,7 +14,7 @@ const { serve, setup } = require('swagger-ui-express')
 const cepRoutes = require('./routes/cepRoutes')
 const swaggerJson = require('../swagger.json')
 const httpLogger = require('./services/log/httpLogger')
-const hashMapMiddleware = require('./middlewares/hashMapMiddleware')
+const hashMapMiddleware = require('./middlewares/hashmapMiddleware')
 const app = express()
 const map = new Map()
 
