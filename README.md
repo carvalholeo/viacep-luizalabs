@@ -23,7 +23,7 @@ Isso colocará o servidor no ar. Para visualizar as informações de um CEP, ent
 
 ### Motivação de usar o Node
 
-Além de ser uma das tecnologias sugeridas, é a tecnologia que mais domino atualmente. Também, pensando em como as APIs funcionam, é uma plataforma que trabalha bem com requisições assíncronas, ideal para cenários como o proposto.
+Além de ser uma das tecnologias sugeridas, é a tecnologia que mais domino atualmente. Também, pensando em como as APIs funcionam, é uma plataforma que trabalha bem com requisições assíncronas, ideal para cenários como o proposto. O detalhamento de como o serviço foi concebido e como as coisas acontecem, em linhas gerais, podem ser [encontradas no arquivo TECH.md](TECH.md), disponível na raiz deste repositório.
 
 ## Como visualizar a documentação
 
