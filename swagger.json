@@ -45,6 +45,12 @@
               "$ref": "#/definitions/CEP"
             }
           },
+          "302": {
+            "description": "CEP data is from cache",
+            "schema": {
+              "$ref": "#/definitions/CEP"
+            }
+          },
           "404": {
             "description": "CEP number wasn't found.",
             "schema": {

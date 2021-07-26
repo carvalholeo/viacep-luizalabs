@@ -1,0 +1,1 @@
+"use strict";function hashMapMiddleware(req,res,next){var map=req.map;var url="".concat(req.baseUrl).concat(req.path);var isCached=map.has(url);if(isCached){var cachedResponse=map.get(url);return res.status(302).json(cachedResponse)}next()}module.exports=hashMapMiddleware;
