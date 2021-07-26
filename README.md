@@ -21,6 +21,10 @@ Isso colocará o servidor no ar. Para visualizar as informações de um CEP, ent
 - Node 10.24.0 ou superior
 - NPM 6.14.11
 
+### Motivação de usar o Node
+
+Além de ser uma das tecnologias sugeridas, é a tecnologia que mais domino atualmente. Também, pensando em como as APIs funcionam, é uma plataforma que trabalha bem com requisições assíncronas, ideal para cenários como o proposto.
+
 ## Como visualizar a documentação
 
 Com as dependências instaladas, inicie o projeto com o comando `npm start`. No navegador, entre na página [http://localhost:3000/api-docs](http://localhost:3000/api-docs). Você será capaz de visualizar a documentação, com a utilização de Swagger.
@@ -38,11 +42,11 @@ Os principais pacotes de produção utilizados são:
 - Express 4.17.1: manipulação das requisições HTTP de clientes
 - Cors 2.8.5: habilitador de segurança para evitar uso indevido da API
 - Cross Env 7.0.3: coloca variáveis de ambiente antes da execução de qualquer código
-- Dotenv 8.2.0: trabalhar com variáveis de ambiente, sem senhas e tokens _hard coded_
 - Express Bouncer 0.2.0: aplicação de limites de consultas à API
 - Express Validator 6.10.1: validação de informações recebidas na requisição
 - Helmet 4.4.1: limpeza e validações de segurança do ambiente Node
 - HPP 0.2.3: limpeza de _query strings_, para evitar ataques de _Parameter Pollution_
+- HTTP Errors 1.8.0: usado para disparar trabalhar corretamente com os erros em função das requisições HTTP
 - Morgan 1.10.10: registrador de log para requisições HTTP
 - Morgan JSON 1.1.0: transformação das mensagens padrão de log em JSON
 - Swagger UI Express 4.1.6: documentação da API, através de interface Web
