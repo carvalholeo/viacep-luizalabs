@@ -3,6 +3,8 @@ const getCep = require('../services/getCep')
 
 const cepController = {
   getCep: async (req, res) => {
+    const { map } = req
+    const url = `${req.baseUrl}${req.path}`
     const { cepNumber } = req.params
     let cepClean = cepNumber.replace(/-/g, '')
     let query = {}
@@ -24,9 +26,11 @@ const cepController = {
     }
 
     if (query.data.erro) {
-      return res.status(404).json({
+      const response = {
         message: 'CEP inválido'
-      })
+      }
+      map.set(url, response)
+      return res.status(404).json(response)
     }
 
     const {
@@ -49,7 +53,7 @@ const cepController = {
     if (logradouro === '') {
       data['cep-geral'] = true
     }
-
+    map.set(url, data)
     return res.status(200).json({ ...data })
   }
 }
