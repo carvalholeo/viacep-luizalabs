@@ -15,6 +15,7 @@ const cepRoutes = require('./routes/cepRoutes')
 const swaggerJson = require('../swagger.json')
 const httpLogger = require('./services/log/httpLogger')
 const app = express()
+const map = new Map()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -29,6 +30,12 @@ app.use(hpp())
 
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.use((req, res, next) => {
+  // @ts-ignore
+  req.map = map
+  next()
+})
 
 if (process.env.NODE_ENV !== 'test') {
   const bouncerLimiter = require('./middlewares/bouncerLimiterMiddleware')
