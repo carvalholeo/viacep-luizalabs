@@ -14,6 +14,7 @@ const { serve, setup } = require('swagger-ui-express')
 const cepRoutes = require('./routes/cepRoutes')
 const swaggerJson = require('../swagger.json')
 const httpLogger = require('./services/log/httpLogger')
+const hashMapMiddleware = require('./middlewares/hashMapMiddleware')
 const app = express()
 const map = new Map()
 
@@ -41,7 +42,8 @@ if (process.env.NODE_ENV !== 'test') {
   const bouncerLimiter = require('./middlewares/bouncerLimiterMiddleware')
   app.use(bouncerLimiter.block)
 }
-
+// @ts-ignore
+app.use(hashMapMiddleware)
 app.use('/cep', cepRoutes)
 app.use('/api-docs', serve, setup(swaggerJson))
 
