@@ -21,7 +21,7 @@
     "debug": "~4.3.1",
     "express": "~4.17.1",
     "express-bouncer": "^0.2.0",
-    "express-validator": "^6.12.0",
+    "express-validator": "^6.12.1",
     "helmet": "^4.4.1",
     "hpp": "^0.2.3",
     "http-errors": "~1.8.0",
